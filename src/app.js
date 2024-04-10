@@ -33,7 +33,7 @@ async function moveFile() {
   const sourceDir = path.dirname(source);
 
   try {
-    await fs.access(destinationDir, fs.constants.F_OK);
+    await fs.access(destinationDir);
 
     if (destinationDir === sourceDir) {
       await fs.rename(source, destinationFile);
